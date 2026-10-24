@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Lofi's",
+    "slug": "lofis-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "dev.ebze.lofis"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F9CF00",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "dev.ebze.lofis"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "name": "Lofi's",
+      "themeColor": "#582D09",
+      "backgroundColor": "#FFF8EC"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "scheme": "lofis",
+    "backgroundColor": "#FFF8EC"
+  }
+}
