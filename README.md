@@ -1,5 +1,7 @@
 # Lofi's — working mobile prototype
 
+**Live demo:** https://ebzefr.github.io/lofis-app/ (best on a phone)
+
 A front-end-only React Native (Expo) prototype of **Lofi's**, a restaurant app for pizza, burgers and
 Chinese food, built from my Lofi's UX/UI case study. There is no backend: menu data is local and
 everything you do (account, basket, wishlist, orders, bookings) is saved on the device.
@@ -27,6 +29,9 @@ npm start          # then scan the QR code with Expo Go, or press i / a for a si
 ```
 
 Checks: `npm run typecheck` and `npx eslint src`. Static web build: `npm run export:web` (outputs `dist/`).
+
+Every push to `main` builds the web version and deploys it to GitHub Pages
+(`.github/workflows/deploy.yml`). It's served under `/lofis-app`, set by `experiments.baseUrl` in `app.json`.
 
 ## Food artwork
 

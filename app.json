@@ -32,6 +32,9 @@
       "expo-font"
     ],
     "scheme": "lofis",
-    "backgroundColor": "#FFF8EC"
+    "backgroundColor": "#FFF8EC",
+    "experiments": {
+      "baseUrl": "/lofis-app"
+    }
   }
 }
