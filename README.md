@@ -28,22 +28,29 @@ npm start          # then scan the QR code with Expo Go, or press i / a for a si
 
 Checks: `npm run typecheck` and `npx eslint src`. Static web build: `npm run export:web` (outputs `dist/`).
 
-## Swapping in the final food artwork
+## Food artwork
 
-Every image in `assets/food` is a placeholder. Replace a file with your own artwork **using the same
-filename** and it shows up everywhere. Use transparent PNGs: dishes 1000×1000 (top-down for pizzas
-and bowls), extras and drinks about 600×600.
+Dishes and drinks in `assets/food` are the final photographic cut-outs, stored as **WebP**
+(900×900, transparent) so the app stays light. The toppings, burger extras, Chinese sides and
+illustrations are still flat **PNG placeholders**. To replace any image, drop in a file with the same
+name (and extension), or update its path in `src/data/menu.ts`.
 
-| Group | Files |
-| --- | --- |
-| Pizzas | `pizza-margherita`, `pizza-pepperoni`, `pizza-bbq-chicken`, `pizza-veggie-supreme`, `pizza-hot-and-spicy`, `pizza-meat-feast` |
-| Burgers | `burger-classic`, `burger-cheeseburger`, `burger-chicken`, `burger-double-smash`, `burger-veggie`, `burger-spicy-jalapeno` |
-| Chinese | `chinese-sweet-and-sour-chicken`, `chinese-chow-mein`, `chinese-egg-fried-rice`, `chinese-salt-and-pepper-chicken`, `chinese-crispy-chilli-beef`, `chinese-kung-pao-chicken` |
-| Pizza toppings | `topping-mushroom`, `topping-pepperoni`, `topping-olives`, `topping-peppers`, `topping-onion`, `topping-extra-cheese` |
-| Burger extras | `extra-cheese-slice`, `extra-bacon`, `extra-fried-egg`, `extra-jalapenos`, `extra-avocado`, `extra-onion-rings` |
-| Chinese sides | `side-spring-rolls`, `side-prawn-crackers`, `side-dumplings`, `side-chilli-oil`, `side-egg-fried-rice`, `side-soy-sauce` |
-| Drinks | `drink-cola`, `drink-lemonade`, `drink-orange-soda`, `drink-water`, `drink-bubble-tea` |
-| Illustrations | `illustration-cooking`, `illustration-empty-basket`, `illustration-empty-wishlist` |
+To convert a new transparent PNG to the same format:
+
+```bash
+cwebp -resize 900 900 -q 82 -alpha_q 90 "My new dish.png" -o assets/food/pizza-pepperoni.webp
+```
+
+| Group | Files | Status |
+| --- | --- | --- |
+| Pizzas | `pizza-margherita`, `pizza-pepperoni`, `pizza-bbq-chicken`, `pizza-veggie-supreme`, `pizza-hot-and-spicy`, `pizza-meat-feast` | Final (.webp) |
+| Burgers | `burger-classic`, `burger-cheeseburger`, `burger-chicken`, `burger-double-smash`, `burger-veggie`, `burger-spicy-jalapeno` | Final (.webp) |
+| Chinese | `chinese-sweet-and-sour-chicken`, `chinese-chow-mein`, `chinese-egg-fried-rice`, `chinese-salt-and-pepper-chicken`, `chinese-crispy-chilli-beef`, `chinese-kung-pao-chicken` | Final (.webp) |
+| Drinks | `drink-cola`, `drink-lemonade`, `drink-orange-soda`, `drink-water`, `drink-chocolate-milkshake`, `drink-strawberry-milkshake` | Final (.webp) |
+| Pizza toppings | `topping-mushroom`, `topping-pepperoni`, `topping-olives`, `topping-peppers`, `topping-onion`, `topping-extra-cheese` | Placeholder (.png) |
+| Burger extras | `extra-cheese-slice`, `extra-bacon`, `extra-fried-egg`, `extra-jalapenos`, `extra-avocado`, `extra-onion-rings` | Placeholder (.png) |
+| Chinese sides | `side-spring-rolls`, `side-prawn-crackers`, `side-dumplings`, `side-chilli-oil`, `side-egg-fried-rice`, `side-soy-sauce` | Placeholder (.png) |
+| Illustrations | `illustration-cooking`, `illustration-empty-basket`, `illustration-empty-wishlist` | Placeholder (.png) |
 
 Dish names, prices, descriptions, allergens and diet tags live in `src/data/menu.ts`.
 
